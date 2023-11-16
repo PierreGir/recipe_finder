@@ -70,3 +70,4 @@ gem 'byebug'
 gem 'rspec-rails'
 gem "factory_bot_rails"
 gem 'will_paginate'
+gem 'rack-cors'
