@@ -46,7 +46,7 @@ npm start
 
 Now, you should have the Rails API server running on http://localhost:3001 and the React app running on http://localhost:3000. You can access the application through your web browser at http://localhost:3000.
 
-### Running Rails and React Apps Separately:
+### Running Tests:
 
 1. Ensure you have a recipe_finder_dev database created.
 2. Run the following command to execute RSpec tests:
