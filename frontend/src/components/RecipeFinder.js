@@ -43,7 +43,8 @@ const RecipeFinder = () => {
       setExpandedRecipe(null);
       const queryString = ingredientList.map((ingredient) => `ingredients[]=${encodeURIComponent(ingredient)}`).join('&');
       const paginationParams = `page=${currentPage}&per_page=${itemsPerPage}`;
-      const url = `http://localhost:3001/api/recipes?${queryString}&${paginationParams}`;
+      const baseUrl = process.env.NODE_ENV === 'production' ? 'https://recipe-finder-pierreg-rails.fly.dev' : 'http://localhost:3001';
+      const url = `${baseUrl}/api/recipes?${queryString}&${paginationParams}`;
 
       const response = await fetch(url, {
         method: 'GET',

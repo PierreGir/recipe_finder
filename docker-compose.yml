@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  rails:
+    image: recipe-finder-rails
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: "mysql2://root:root@db:3306/recipe_finder_dev"
+      
+  react:
+    image: recipe-finder-react
+    build: ./frontend
+    ports:
+      - "3000:3000"
+
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: recipe_finder_dev
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
